@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10 паттернов от Евсеева А.О МОСм-191</title>
+    <style>
+        body{
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            text-align: center
+        }
+        h3{
+            width: content-box;
+            margin: .5em!important;
+        }
+        a{
+            box-sizing: border-box;
+            text-decoration: none;
+            cursor: pointer;
+            color: black!important;
+        }
+    </style>
+</head>
+<body>
+<h1>10 паттернов от Евсеева А.О МОСм-191</h1>
+{% for item in dict_res%}
+    <a href="{{ url_for('patterns', pattern_called=item.href) }}">
+        <h3>{{item.description}}</h3>
+    </a>
+{%endfor%}
+</body>
+</html>

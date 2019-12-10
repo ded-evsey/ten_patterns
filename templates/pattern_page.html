@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{dict_res.page_title}}</title>
+    <style>
+        body{
+            font-family: "Roboto";
+            height: 100%;
+        }
+        .container{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+        }
+        .code{
+            background: black;
+            color: white;
+            height: 40em;
+            overflow: scroll;
+            text-align: left;
+            padding: 3em;
+            box-sizing: border-box;
+        }
+        .code_res{
+            height: 25em;
+        }
+        a{
+            text-decoration: none;
+            cursor: pointer;
+            color: black!important;
+        }
+        h3{
+            margin: .5em
+        }
+        .description{
+            height: 10em;
+            text-align: left;
+            overflow-y: scroll;
+            padding: .3em;
+        }
+        .field-area{
+            min-height: 5em;
+            text-align: left;
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+<body style="width: 80%;margin: auto; text-align: center">
+    <h1>{{dict_res.page_title}}</h1>
+    <h3>
+        Область применения
+    </h3>
+    <div class="field-area">
+        {{dict_res.field_area}}
+    </div>
+    <div style="display: flex">
+        <div class="container" style="padding-right: 2em">
+            <h3>Описание метода</h3>
+            <div class="description">
+                {{dict_res.description}}
+            </div>
+            <h3>Результат работы кода</h3>
+            <div>
+                <pre class="code code_res">
+                    {{dict_res.result}}
+                </pre>
+            </div>
+        </div>
+        <div style="padding-left: 2em;" class="container">
+            <h3>Код</h3>
+            <pre class="code">
+                {{dict_res.code}}
+            </pre>
+        </div>
+    </div>
+    <a href="{{url_for('main')}}">
+        <h3>Вернуться к списку паттернов</h3>
+    </a>
+</body>
+</html>
